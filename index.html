@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bobrix Corp.</title>
   <link rel="icon" href="https://cdn.reeses.ca/BobrixCorpfavicon.png" type="image/png" />
-  <meta name="description" content="Bobrix Corp. — building the next era of entertainment, creation, and innovation. Explore our brands: Aurix, Bobrix, BLOCKVERSE, Royal OS, and Sieron." />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Bobrix Corp. — a modern, multi‑platform company that owns and develops brands across live streaming, UGC experiences, developer tools, and more. Explore Aurix, Bobrix, BLOCKVERSE, Royal OS, and Sieron." />
   <style>
     :root {
       --bg: #0b0c10;
@@ -15,267 +14,238 @@
       --text: #eaeef6;
       --muted: #9aa3b2;
       --brand: #ff4d6d;
-      --accent: #6cf;
       --radius: 16px;
       --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.25);
-      --grid-gap: clamp(1rem, 2vw, 1.25rem);
     }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fb;
-        --panel: #ffffff;
-        --panel-2: #f2f4f8;
-        --text: #0c1020;
-        --muted: #556070;
-        --shadow: 0 10px 24px rgba(10,14,30,.10), 0 2px 6px rgba(10,14,30,.06);
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, var(--bg), color-mix(in oklab, var(--bg) 80%, black));
-      color: var(--text);
-      font: 400 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(1200px, 92vw); margin-inline: auto; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; scroll-behavior: smooth; }
+    header { background: var(--panel); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 10; }
+    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+    .nav img { height: 40px; }
+    .navlinks { display: flex; gap: 20px; }
+    .navlinks a { color: var(--text); text-decoration: none; opacity: 0.8; }
+    .navlinks a:hover { opacity: 1; }
+    .btn { background: var(--brand); color: white; border: none; border-radius: 999px; padding: 8px 16px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow); }
 
-    header {
-      position: sticky; top: 0; z-index: 20;
-      background: color-mix(in oklab, var(--panel) 94%, transparent);
-      backdrop-filter: saturate(1.2) blur(8px);
-      border-bottom: 1px solid color-mix(in oklab, var(--panel-2) 60%, transparent);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
-    .brand img { height: 36px; }
-    .actions { display: flex; gap: .5rem; align-items: center; }
-    .btn {
-      --bgd: var(--panel-2);
-      display: inline-flex; align-items: center; gap: .5rem;
-      border: 1px solid color-mix(in oklab, var(--panel-2) 65%, transparent);
-      background: var(--bgd); color: var(--text);
-      padding: .5rem .9rem; border-radius: 999px;
-      box-shadow: var(--shadow); transition: .2s ease;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 36px rgba(0,0,0,.4); }
-    .btn.primary {
-      --bgd: color-mix(in oklab, var(--brand) 18%, var(--panel-2));
-      border-color: color-mix(in oklab, var(--brand) 35%, var(--panel-2));
-    }
+    main { max-width: 1200px; margin: auto; padding: 40px 20px; }
 
-    .hero { padding: clamp(2rem, 3vw, 3rem) 0 1rem; }
-    .hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--grid-gap); align-items: center; }
-    .card {
-      background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, transparent), color-mix(in oklab, var(--panel-2) 92%, transparent));
-      border: 1px solid color-mix(in oklab, var(--panel-2) 75%, transparent);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .card.pad { padding: clamp(1rem, 3vw, 1.5rem); }
+    /* Hero */
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 30px; }
+    .hero-text h1 { font-size: 2.6rem; margin-bottom: 10px; }
+    .hero-text p { color: var(--muted); max-width: 800px; margin: auto; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+    .badge { background: rgba(255,255,255,0.08); border-radius: 999px; padding: 4px 12px; font-size: 0.85rem; color: var(--brand); border: 1px solid rgba(255,255,255,0.12); }
 
-    .hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); line-height: 1.2; margin: 0 0 .3rem; }
-    .hero p.lede { color: var(--muted); margin: 0 0 1rem; }
-    .hero .badges { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .badge { font-size: .8rem; border: 1px solid color-mix(in oklab, var(--brand) 45%, var(--panel-2)); color: color-mix(in oklab, var(--brand) 80%, white); background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 20%, var(--panel)), transparent 120%); padding: .25rem .6rem; border-radius: 999px; }
+    .facts { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
+    .fact { background: var(--panel-2); border-radius: 12px; padding: 16px 20px; text-align: center; flex: 1; min-width: 160px; max-width: 200px; }
+    .fact b { display: block; font-size: 1.2rem; }
+    .fact span { color: var(--muted); font-size: 0.9rem; }
 
-    .marquee { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--grid-gap); }
-    .marquee .tile { aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; background: color-mix(in oklab, var(--panel) 85%, transparent); border: 1px dashed color-mix(in oklab, var(--panel-2) 65%, transparent); border-radius: var(--radius); overflow: hidden; }
-    .marquee .tile img { object-fit: contain; inline-size: 90%; block-size: 90%; filter: drop-shadow(0 8px 20px rgba(0,0,0,.35)); }
+    .hero-logos { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px; }
+    .hero-logos img { width: clamp(110px, 12vw, 150px); max-height: 70px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0,0,0,0.4)); }
 
-    section { padding: clamp(1.5rem, 3.5vw, 2.5rem) 0; }
-    .section-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1rem; }
-    .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--grid-gap); }
+    /* Sections */
+    section { margin-top: 80px; }
+    .section-head { text-align: center; margin-bottom: 20px; }
+    .section-head h2 { font-size: 2rem; }
 
-    .brand-card { cursor: pointer; }
-    .brand-card .thumb { display: grid; place-items: center; aspect-ratio: 16/9; background: radial-gradient(120% 120% at 10% 10%, color-mix(in oklab, var(--brand) 18%, var(--panel-2)), var(--panel)); border-bottom: 1px solid color-mix(in oklab, var(--panel-2) 70%, transparent); }
-    .brand-card img { max-height: 72%; object-fit: contain; }
-    .brand-card .body { padding: 1rem; }
-    .brand-card h3 { margin: .1rem 0 .25rem; font-size: 1.05rem; }
-    .brand-card p { margin: 0; color: var(--muted); font-size: .95rem; }
-    .meta { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .7rem; }
-    .chip { font-size: .75rem; color: var(--text); background: color-mix(in oklab, var(--panel-2) 85%, transparent); border: 1px solid color-mix(in oklab, var(--panel-2) 70%, transparent); padding: .2rem .5rem; border-radius: 999px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .card { background: var(--panel-2); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); }
+    .lede { color: var(--muted); margin-bottom: 10px; }
+    ul.list { padding-left: 20px; color: var(--text); }
+
+    /* Brands */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 22px; }
+    .brand-card { background: var(--panel-2); border-radius: 16px; box-shadow: var(--shadow); cursor: pointer; overflow: hidden; }
+    .brand-card .thumb { display: flex; align-items: center; justify-content: center; background: var(--panel); height: 140px; }
+    /* FIX: constrain logos so they never overflow */
+    .brand-card .thumb img { max-height: 84px; max-width: 88%; width: auto; height: auto; object-fit: contain; }
+    .brand-card .body { padding: 18px 20px 20px; }
+    .brand-card h3 { margin: 0 0 6px; }
+    .brand-card p { color: var(--muted); margin: 0; }
+    .chip { display:inline-block; font-size:.8rem; padding:.15rem .5rem; border-radius:999px; border:1px solid rgba(255,255,255,.14); color:#cfd6ff; margin-top:.5rem; }
+
+    /* Timeline */
+    .timeline { border-left: 2px solid var(--brand); padding-left: 20px; }
+    .timeline div { margin: 10px 0; }
+    .timeline strong { color: var(--brand); }
 
     /* Modal */
-    .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: color-mix(in oklab, #000 60%, transparent); z-index: 50; padding: 1rem; }
+    .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.55); z-index: 50; padding: 1rem; }
     .modal[open] { display: flex; }
-    .dialog { width: min(720px, 92vw); background: var(--panel); border: 1px solid color-mix(in oklab, var(--panel-2) 70%, transparent); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
-    .dialog-head { display: flex; align-items: center; justify-content: space-between; padding: .9rem 1rem; border-bottom: 1px solid color-mix(in oklab, var(--panel-2) 60%, transparent); }
-    .dialog-head h3 { margin: 0; font-size: 1.1rem; }
-    .dialog-close { border: 0; background: transparent; color: var(--text); font-size: 1.25rem; cursor: pointer; }
-    .dialog-body { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1rem; padding: 1rem; }
-    .dialog-body .thumb { display: grid; place-items: center; background: color-mix(in oklab, var(--panel-2) 85%, transparent); border-radius: 14px; aspect-ratio: 16/9; }
-    .dialog-body img { max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 8px 20px rgba(0,0,0,.35)); }
-    .dialog-body p { margin: 0; color: var(--muted); }
+    .dialog { width: min(760px, 92vw); background: var(--panel); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+    .dialog-head { display:flex; align-items:center; justify-content:space-between; padding:.9rem 1rem; border-bottom:1px solid rgba(255,255,255,.1) }
+    .dialog-head h3 { margin:0; font-size:1.15rem }
+    .dialog-close { border:0; background:transparent; color:var(--text); font-size:1.25rem; cursor:pointer }
+    .dialog-body { display:grid; grid-template-columns: 1fr 1.4fr; gap:1rem; padding:1rem }
+    .dialog .thumb { display:grid; place-items:center; background: var(--panel-2); border-radius:12px; aspect-ratio:16/9 }
+    .dialog .thumb img { max-width: 90%; max-height: 90%; object-fit: contain }
+    .dialog-body p { margin:.2rem 0 .6rem; color:var(--muted) }
+    .dialog-body .meta { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.4rem }
 
-    @media (max-width: 980px) { 
-      .hero-inner { grid-template-columns: 1fr; }
-      .marquee { grid-template-columns: repeat(3, 1fr); }
-      .grid { grid-template-columns: repeat(2, 1fr); }
-      .dialog-body { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 560px) { 
-      .nav { padding: 10px 0; }
-      .marquee { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-    }
+    footer { text-align: center; padding: 40px 20px; color: var(--muted); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 80px; }
+
+    @media(max-width:960px){ .about-grid { grid-template-columns: 1fr; } .dialog-body{ grid-template-columns:1fr } }
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <div class="brand" aria-label="Bobrix Corp.">
-        <img src="https://cdn.reeses.ca/BOBRIX%202%20Logo.png" alt="Bobrix Corp logo" />
+    <div class="nav">
+      <img src="https://cdn.reeses.ca/BOBRIX%202%20Logo.png" alt="Bobrix Corp Logo">
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#brands">Brands</a>
+        <a href="#history">History</a>
       </div>
-      <div class="actions">
-        <button class="btn" id="themeToggle" aria-label="Toggle theme">🌗 <span class="hide-sm">Theme</span></button>
-        <a class="btn primary" href="#brands">Explore Brands</a>
-      </div>
+      <a href="#brands" class="btn">Explore Brands</a>
     </div>
   </header>
+
   <main>
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="card pad">
-          <h1>Innovating how people play, create, and connect.</h1>
-          <p class="lede">Bobrix Corp. develops technologies and experiences that empower creators and communities across platforms — from live streaming to game creation, and from digital operating systems to in-game programming languages.</p>
-          <div class="badges">
-            <span class="badge">Technology‑Driven</span>
-            <span class="badge">Creator‑Focused</span>
-            <span class="badge">Community‑Inspired</span>
-          </div>
+      <div class="hero-text">
+        <h1>Innovating how people play, create, and connect.</h1>
+        <p>Bobrix Corp. is a multi‑platform company that builds and operates diverse brands — from live streaming and developer tools to creative worlds and digital experiences. We connect creativity, technology, and community to shape the future of entertainment.</p>
+        <div class="badges">
+          <span class="badge">Technology‑Driven</span>
+          <span class="badge">Creator‑Focused</span>
+          <span class="badge">Community‑Inspired</span>
         </div>
-        <div class="card pad">
-          <div class="marquee" aria-label="Brand logos">
-            <div class="tile"><img src="https://cdn.reeses.ca/AurixLogoNew2.png" alt="Aurix logo" /></div>
-            <div class="tile"><img src="https://cdn.reeses.ca/BOBRIX%20logo.png" alt="Bobrix logo" /></div>
-            <div class="tile"><img src="https://cdn.reeses.ca/BLOCKVERSE%20BASIC%20WHITE%20TEXT%20WITH%20BORDER%20AND%20SHADOW.png" alt="BLOCKVERSE logo" /></div>
-            <div class="tile"><img src="https://cdn.reeses.ca/ROYAL%20OS%20WHITE%20BRAND%20TEXT.png" alt="Royal OS logo" /></div>
-            <div class="tile"><img src="https://cdn.reeses.ca/Sieron%20Programing%20Language.png" alt="Sieron logo" /></div>
+        <div class="facts">
+          <div class="fact"><b>5 Brands</b><span>Games • Tools • Media</span></div>
+          <div class="fact"><b>Since 2022</b><span>Building in public</span></div>
+          <div class="fact"><b>Independent</b><span>Privately held</span></div>
+        </div>
+      </div>
+      <div class="hero-logos" aria-label="Brand logos">
+        <img src="https://cdn.reeses.ca/AurixLogoNew2.png" alt="Aurix logo">
+        <img src="https://cdn.reeses.ca/BOBRIX%20logo.png" alt="Bobrix logo">
+        <img src="https://cdn.reeses.ca/BLOCKVERSE%20BASIC%20WHITE%20TEXT%20WITH%20BORDER%20AND%20SHADOW.png" alt="BLOCKVERSE logo">
+        <img src="https://cdn.reeses.ca/ROYAL%20OS%20WHITE%20BRAND%20TEXT.png" alt="Royal OS logo">
+        <img src="https://cdn.reeses.ca/Sieron%20Programing%20Language.png" alt="Sieron logo">
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head"><h2>About Bobrix Corp.</h2></div>
+      <div class="about-grid">
+        <div class="card">
+          <p class="lede">We design products that empower players, creators, and developers worldwide. Our approach combines strong technology with accessible tools and experiences for all.</p>
+          <ul class="list">
+            <li>🏗️ Build intuitive, creator‑first technologies</li>
+            <li>🌎 Expand beyond platforms into diverse ecosystems</li>
+            <li>🎮 Support immersive, interactive, and social media experiences</li>
+            <li>⚡ Rapid iteration and community collaboration</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="lede">Corporate history and name lineage:</p>
+          <div class="timeline">
+            <div><strong>2022 — Royal OS</strong>: Interactive desktop systems inside Roblox</div>
+            <div><strong>2023 — Royal+</strong>: Connected apps and entertainment projects</div>
+            <div><strong>2024 — Boblox → Bobrix Corp</strong>: Rebrand to an independent multi‑platform company</div>
+            <div><strong>2025 — Present</strong>: Expanding across live streaming, dev tools, and UGC brands</div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="brands">
-      <div class="container section-head">
-        <h2>Owned Brands</h2>
-        <a class="btn" href="#history">Company History</a>
-      </div>
-      <div class="container grid">
-        <article class="card brand-card" data-title="Aurix" data-img="https://cdn.reeses.ca/AurixLogoNew2.png" data-desc="Aurix is a global live streaming and social entertainment platform. It allows creators to broadcast to thousands of viewers in real time, featuring integrated chat, donation tools, and community events. Aurix aims to combine the creativity of Twitch with the discovery and reach of modern social media.">
-          <div class="thumb"><img src="https://cdn.reeses.ca/AurixLogoNew2.png" alt="Aurix logo" /></div>
-          <div class="body"><h3>Aurix</h3><p>Stream, share, and grow your audience live.</p><div class="meta"><span class="chip">Previously: GVID</span></div></div>
+      <div class="section-head"><h2>Our Brands</h2></div>
+      <div class="grid">
+        <article class="brand-card" data-slug="aurix" data-title="Aurix" data-img="https://cdn.reeses.ca/AurixLogoNew2.png" data-prev="GVID" data-desc="A live streaming and creator platform that lets channels broadcast to global audiences with chat, alerts, and community tools.">
+          <div class="thumb"><img src="https://cdn.reeses.ca/AurixLogoNew2.png" alt="Aurix"></div>
+          <div class="body"><h3>Aurix</h3><p>A live streaming and creator platform empowering global audiences to broadcast, interact, and connect in real time.</p><span class="chip">Previously: GVID</span></div>
         </article>
-
-        <article class="card brand-card" data-title="Bobrix" data-img="https://cdn.reeses.ca/BOBRIX%20logo.png" data-desc="Bobrix was an ambitious sandbox universe — essentially 'Roblox within Roblox'. Built in 2023, it let players create, publish, and explore user‑generated games with advanced scripting and building tools. The project concluded in September 2025, marking the transition to independent development under Bobrix Corp.">
-          <div class="thumb"><img src="https://cdn.reeses.ca/BOBRIX%20logo.png" alt="Bobrix logo" /></div>
-          <div class="body"><h3>Bobrix</h3><p>A UGC platform that redefined creation within Roblox.</p><div class="meta"><span class="chip">Previously: Boblox</span></div></div>
+        <article class="brand-card" data-slug="bobrix" data-title="Bobrix" data-img="https://cdn.reeses.ca/BOBRIX%20logo.png" data-prev="Boblox" data-desc="A sandbox creation platform — essentially ‘Roblox within Roblox’ — launched in 2023. Sunset in Sept 2025 as we shifted to independent tech.">
+          <div class="thumb"><img src="https://cdn.reeses.ca/BOBRIX%20logo.png" alt="Bobrix"></div>
+          <div class="body"><h3>Bobrix</h3><p>A sandbox creation platform that inspired players to build immersive worlds. Originally launched in 2023, it shaped Bobrix Corp’s philosophy on user creativity.</p><span class="chip">Previously: Boblox</span></div>
         </article>
-
-        <article class="card brand-card" data-title="BLOCKVERSE" data-img="https://cdn.reeses.ca/BLOCKVERSE%20BASIC%20WHITE%20TEXT%20WITH%20BORDER%20AND%20SHADOW.png" data-desc="BLOCKVERSE recreated the Minecraft experience inside Roblox — blending voxel building with multiplayer creativity. Launched in early 2024, it became a fan favorite for its smooth performance and realism before concluding operations later that year.">
-          <div class="thumb"><img src="https://cdn.reeses.ca/BLOCKVERSE%20BASIC%20WHITE%20TEXT%20WITH%20BORDER%20AND%20SHADOW.png" alt="BLOCKVERSE logo" /></div>
-          <div class="body"><h3>BLOCKVERSE</h3><p>The ultimate voxel sandbox inside Roblox.</p><div class="meta"><span class="chip">Previously: Creative Sandbox</span></div></div>
+        <article class="brand-card" data-slug="blockverse" data-title="BLOCKVERSE" data-img="https://cdn.reeses.ca/BLOCKVERSE%20BASIC%20WHITE%20TEXT%20WITH%20BORDER%20AND%20SHADOW.png" data-prev="Creative Sandbox" data-desc="A voxel sandbox with multiplayer worlds, survival and creative modes. Launched early 2024; wrapped later that year.">
+          <div class="thumb"><img src="https://cdn.reeses.ca/BLOCKVERSE%20BASIC%20WHITE%20TEXT%20WITH%20BORDER%20AND%20SHADOW.png" alt="BLOCKVERSE"></div>
+          <div class="body"><h3>BLOCKVERSE</h3><p>A voxel sandbox that blended creativity, collaboration, and survival elements — a community favorite during 2024.</p><span class="chip">Previously: Creative Sandbox</span></div>
         </article>
-
-        <article class="card brand-card" data-title="Royal OS" data-img="https://cdn.reeses.ca/ROYAL%20OS%20WHITE%20BRAND%20TEXT.png" data-desc="Royal OS is the legacy suite of virtual operating systems built inside Roblox — including Royal Serene and Royal Climax. These projects pioneered the concept of fully interactive desktops and programs within the Roblox platform, inspiring an entire subculture of digital creativity.">
-          <div class="thumb"><img src="https://cdn.reeses.ca/ROYAL%20OS%20WHITE%20BRAND%20TEXT.png" alt="Royal OS logo" /></div>
-          <div class="body"><h3>Royal OS</h3><p>Interactive Roblox operating systems that started it all.</p><div class="meta"><span class="chip">Roblox OS Suite</span></div></div>
+        <article class="brand-card" data-slug="royalos" data-title="Royal OS" data-img="https://cdn.reeses.ca/ROYAL%20OS%20WHITE%20BRAND%20TEXT.png" data-prev="—" data-desc="The legacy suite of Roblox operating systems — Royal Serene and Royal Climax — that pioneered interactive desktops and apps.">
+          <div class="thumb"><img src="https://cdn.reeses.ca/ROYAL%20OS%20WHITE%20BRAND%20TEXT.png" alt="Royal OS"></div>
+          <div class="body"><h3>Royal OS</h3><p>A suite of virtual operating systems — Royal Serene and Royal Climax — that pioneered digital desktops inside sandbox games.</p><span class="chip">Roblox OS Suite</span></div>
         </article>
-
-        <article class="card brand-card" data-title="Sieron" data-img="https://cdn.reeses.ca/Sieron%20Programing%20Language.png" data-desc="Sieron is a modern scripting language designed to make game and app development inside Roblox faster, simpler, and more intuitive. Built by Bobrix Corp., it introduces lightweight syntax and developer‑friendly tools that empower both beginners and professionals to create smarter experiences.">
-          <div class="thumb"><img src="https://cdn.reeses.ca/Sieron%20Programing%20Language.png" alt="Sieron logo" /></div>
-          <div class="body"><h3>Sieron</h3><p>A next‑generation language for Roblox creators.</p><div class="meta"><span class="chip">New</span></div></div>
+        <article class="brand-card" data-slug="sieron" data-title="Sieron" data-img="https://cdn.reeses.ca/Sieron%20Programing%20Language.png" data-prev="—" data-desc="A modern scripting language for Roblox builders — lightweight syntax, friendly APIs, and tools that scale from beginner to power user.">
+          <div class="thumb"><img src="https://cdn.reeses.ca/Sieron%20Programing%20Language.png" alt="Sieron"></div>
+          <div class="body"><h3>Sieron</h3><p>A programming language built for creators, simplifying game and tool development through intuitive design and accessible scripting.</p><span class="chip">New</span></div>
         </article>
       </div>
     </section>
 
     <section id="history">
-      <div class="container section-head"><h2>Company History</h2></div>
-      <div class="container">
-        <div class="card pad">
-          <p class="lede">From interactive Roblox desktops to a full‑scale independent studio — Bobrix Corp. has continuously evolved through innovation, driven by founder Reese Thompson ("Reeseify").</p>
-          <div class="timeline">
-            <div class="t-item"><strong>2022 — Royal OS</strong><div class="t-note">Launched interactive desktop experiences and in‑game apps inside Roblox.</div></div>
-            <div class="t-item"><strong>2023 — Royal+</strong><div class="t-note">Expanded into a network of connected Roblox apps, including utilities and entertainment projects.</div></div>
-            <div class="t-item"><strong>2024 — Boblox → Bobrix Corp</strong><div class="t-note">Rebranded following Roblox policy changes; began developing independent UGC platforms and tools.</div></div>
-            <div class="t-item"><strong>2025 — Present</strong><div class="t-note">Focused on cross‑platform experiences, developer technology, and the future of user‑generated creation.</div></div>
-          </div>
+      <div class="section-head"><h2>Company History</h2></div>
+      <div class="card">
+        <p class="lede">Bobrix Corp has evolved from game experiments to a modern creative technology company, building experiences and infrastructure that empower creators and developers globally.</p>
+        <div class="timeline">
+          <div><strong>2022</strong> — Royal OS established the foundation with desktop experiences inside Roblox.</div>
+          <div><strong>2023</strong> — Royal+ expanded into apps and entertainment utilities.</div>
+          <div><strong>2024</strong> — Transitioned from Boblox to Bobrix Corp, marking independence as a full company.</div>
+          <div><strong>2025</strong> — Focused on multi‑platform expansion across games, media, and technology.</div>
         </div>
       </div>
     </section>
+
+    <footer>
+      © <span id="year"></span> Bobrix Corp. All rights reserved.
+    </footer>
   </main>
 
+  <!-- Brand Modal -->
   <div class="modal" id="brandModal" aria-modal="true" role="dialog" aria-labelledby="brandTitle" aria-describedby="brandDesc">
-    <div class="dialog">
+    <div class="dialog" role="document">
       <div class="dialog-head">
         <h3 id="brandTitle">Brand</h3>
         <button class="dialog-close" id="brandClose" aria-label="Close">✕</button>
       </div>
       <div class="dialog-body">
         <div class="thumb"><img id="brandImg" alt="Brand logo" /></div>
-        <div><p id="brandDesc">Description</p></div>
+        <div>
+          <p id="brandDesc">Description</p>
+          <div class="meta" id="brandMeta"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
-      <small>© <span id="year"></span> Bobrix Corp. All rights reserved.</small>
-      <small>Made with ♥ by the Bobrix team.</small>
-    </div>
-  </footer>
-
   <script>
-    // Theme (persisted) toggle
-    (function() {
-      const key = 'bobrix.theme';
-      const preferred = localStorage.getItem(key);
-      if (preferred) {
-        document.documentElement.style.colorScheme = preferred;
-        document.documentElement.dataset.theme = preferred;
-      }
-      const btn = document.getElementById('themeToggle');
-      btn?.addEventListener('click', () => {
-        const current = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.dataset.theme = next;
-        document.documentElement.style.colorScheme = next;
-        localStorage.setItem(key, next);
-      });
-      document.getElementById('year').textContent = new Date().getFullYear();
-    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Brand modal logic
+    // Modal logic + image sizing is already fixed by CSS above
     (function(){
       const modal = document.getElementById('brandModal');
       const title = document.getElementById('brandTitle');
       const img = document.getElementById('brandImg');
       const desc = document.getElementById('brandDesc');
+      const meta = document.getElementById('brandMeta');
       const closeBtn = document.getElementById('brandClose');
 
       function open(data){
         title.textContent = data.title;
-        img.src = data.img;
-        img.alt = data.title + ' logo';
+        img.src = data.img; img.alt = data.title + ' logo';
         desc.textContent = data.desc;
+        meta.innerHTML = '';
+        if(data.prev && data.prev !== '—'){
+          const chip = document.createElement('span');
+          chip.className = 'chip';
+          chip.textContent = 'Previously: ' + data.prev;
+          meta.appendChild(chip);
+        }
         modal.setAttribute('open','');
         document.body.style.overflow = 'hidden';
         closeBtn.focus();
       }
-      function close(){
-        modal.removeAttribute('open');
-        document.body.style.overflow = '';
-      }
+      function close(){ modal.removeAttribute('open'); document.body.style.overflow = ''; }
 
       document.querySelectorAll('.brand-card').forEach(card => {
         card.addEventListener('click', () => {
           open({
-            title: card.dataset.title || card.querySelector('h3')?.textContent || 'Brand',
-            img: card.dataset.img || card.querySelector('img')?.src || '',
-            desc: card.dataset.desc || ''
+            title: card.dataset.title,
+            img: card.dataset.img,
+            desc: card.dataset.desc,
+            prev: card.dataset.prev
           });
         });
       });
